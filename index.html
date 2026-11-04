@@ -114,4 +114,305 @@
         /* SECCIÓN FIXTURE */
         .fixture-section {
             margin: 40px 0;
-            
+            text-align: left;
+        }
+
+        .fixture-section h2 {
+            font-size: 1.5rem;
+            color: #0f1e36;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #0f1e36;
+            padding-bottom: 5px;
+        }
+
+        .fixture-table-container {
+            overflow-x: auto;
+        }
+
+        .fixture-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .fixture-table th, .fixture-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        .fixture-table th {
+            background-color: #0f1e36;
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .fixture-table tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        .vs-badge {
+            background-color: #d4af37;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* Formulario */
+        .form-section {
+            max-width: 500px;
+            margin: 40px auto 0 auto;
+            text-align: left;
+            background: #f1f5f9;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #334155;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .btn-submit {
+            background-color: #0f1e36;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #1d3557;
+        }
+
+        /* Stepper bar */
+        .stepper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .stepper .active {
+            color: #0f1e36;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        footer a {
+            color: #64748b;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Encabezado con título/logo -->
+    <div class="logo-container">
+        <h2 style="letter-spacing: 2px; color: #0f1e36;">UNIÓN DEPORTIVA</h2>
+        <small style="color: #d4af37; font-weight: bold; letter-spacing: 1px;">ESPÍRITU DE EQUIPO, PASIÓN DE JUEGO</small>
+    </div>
+
+    <h1>Inscripción Abierta a Torneos</h1>
+
+    <!-- Tarjetas de deportes -->
+    <div class="cards-grid">
+        <!-- Fútbol -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400" alt="Fútbol" class="card-img">
+            <h3>Torneo de Fútbol</h3>
+            <div class="price">80.000 ARS</div>
+            <div class="price-sub">por equipo</div>
+            <button class="btn-select" onclick="seleccionarDeporte('Torneo de Fútbol')">Inscribir equipo</button>
+        </div>
+
+        <!-- Básquet -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400" alt="Básquet" class="card-img">
+            <h3>Torneo de Básquet</h3>
+            <div class="price">50.000 ARS</div>
+            <div class="price-sub">por equipo</div>
+            <button class="btn-select" onclick="seleccionarDeporte('Torneo de Básquet')">Inscribir equipo</button>
+        </div>
+
+        <!-- Handball -->
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Handball_St_P%C3%B6lten_vs_UHK_Krems_2018-09-07_160.jpg/640px-Handball_St_P%C3%B6lten_vs_UHK_Krems_2018-09-07_160.jpg" alt="Handball" class="card-img">
+            <h3>Torneo de Handball</h3>
+            <div class="price">40.000 ARS</div>
+            <div class="price-sub">por equipo</div>
+            <button class="btn-select" onclick="seleccionarDeporte('Torneo de Handball')">Inscribir equipo</button>
+        </div>
+
+        <!-- Voley -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=400" alt="Voley" class="card-img">
+            <h3>Torneo de Voley</h3>
+            <div class="price">40.000 ARS</div>
+            <div class="price-sub">por equipo</div>
+            <button class="btn-select" onclick="seleccionarDeporte('Torneo de Voley')">Inscribir equipo</button>
+        </div>
+    </div>
+
+    <!-- SECCIÓN FIXTURE -->
+    <div class="fixture-section">
+        <h2>Fixture & Próximos Partidos</h2>
+        <div class="fixture-table-container">
+            <table class="fixture-table">
+                <thead>
+                    <tr>
+                        <th>Deporte</th>
+                        <th>Fecha y Hora</th>
+                        <th>Encuentro</th>
+                        <th>Cancha / Sede</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Fútbol</strong></td>
+                        <td>Sábado - 16:00 hs</td>
+                        <td>Los Raiados <span class="vs-badge">VS</span> La Sub21</td>
+                        <td>Cancha Principal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Básquet</strong></td>
+                        <td>Sábado - 18:30 hs</td>
+                        <td>Triple Impacto <span class="vs-badge">VS</span> Basquet Club</td>
+                        <td>Gimnasio Cubierto</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Handball</strong></td>
+                        <td>Domingo - 10:00 hs</td>
+                        <td>Gladiadores <span class="vs-badge">VS</span> Titanes HF</td>
+                        <td>Polideportivo A</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Voley</strong></td>
+                        <td>Domingo - 15:00 hs</td>
+                        <td>Red Volley <span class="vs-badge">VS</span> Voley Team</td>
+                        <td>Polideportivo B</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Formulario de inscripción -->
+    <div class="form-section">
+        <h3 style="text-align: center; margin-bottom: 15px; color: #0f1e36;">Formulario de Inscripción</h3>
+        <form id="inscripcionForm" onsubmit="procesarInscripcion(event)">
+            <div class="form-group">
+                <label for="nombreEquipo">Nombre del Equipo</label>
+                <input type="text" id="nombreEquipo" placeholder="Ej: Los Campeones" required>
+            </div>
+
+            <div class="form-group">
+                <label for="deporteElegido">Deporte Elegido</label>
+                <select id="deporteElegido" required>
+                    <option value="" disabled selected>Selecciona un torneo</option>
+                    <option value="Torneo de Fútbol">Torneo de Fútbol ($80.000)</option>
+                    <option value="Torneo de Básquet">Torneo de Básquet ($50.000)</option>
+                    <option value="Torneo de Handball">Torneo de Handball ($40.000)</option>
+                    <option value="Torneo de Voley">Torneo de Voley ($40.000)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="capitanEquipo">Capitán del Equipo</label>
+                <input type="text" id="capitanEquipo" placeholder="Nombre completo" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Confirmar Inscripción</button>
+        </form>
+
+        <div class="stepper">
+            <span class="active">Selección</span> &rarr; <span>Pago</span> &rarr; <span>Confirmación</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Contacto</a>
+        </div>
+        <div>
+            &copy; Unión Deportiva
+        </div>
+    </footer>
+</div>
+
+<script>
+    function seleccionarDeporte(deporte) {
+        document.getElementById('deporteElegido').value = deporte;
+        document.getElementById('inscripcionForm').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function procesarInscripcion(event) {
+        event.preventDefault();
+        const equipo = document.getElementById('nombreEquipo').value;
+        const deporte = document.getElementById('deporteElegido').value;
+        const capitan = document.getElementById('capitanEquipo').value;
+
+        const numeroTelefono = "542944836826"; 
+
+        const mensaje = `Hola! Quiero inscribir a mi equipo para Unión Deportiva:%0A%0A` +
+                        `*Equipo:* ${encodeURIComponent(equipo)}%0A` +
+                        `*Deporte:* ${encodeURIComponent(deporte)}%0A` +
+                        `*Capitán:* ${encodeURIComponent(capitan)}`;
+
+        window.open(`https://wa.me/${numeroTelefono}?text=${mensaje}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
