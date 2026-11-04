@@ -235,7 +235,7 @@
 
         <!-- Handball -->
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1519766304817-4f37bda74a29?w=400" alt="Handball" class="card-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Handball_St_P%C3%B6lten_vs_UHK_Krems_2018-09-07_160.jpg/640px-Handball_St_P%C3%B6lten_vs_UHK_Krems_2018-09-07_160.jpg" alt="Handball" class="card-img">
             <h3>Torneo de Handball</h3>
             <div class="price">40.000 ARS</div>
             <div class="price-sub">por equipo</div>
@@ -290,27 +290,3 @@
             <a href="#">Términos y Condiciones</a>
             <a href="#">Contacto</a>
         </div>
-        <div>
-            &copy; Unión Deportiva
-        </div>
-    </footer>
-</div>
-
-<script>
-    function seleccionarDeporte(deporte) {
-        document.getElementById('deporteElegido').value = deporte;
-        document.getElementById('inscripcionForm').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function procesarInscripcion(event) {
-        event.preventDefault();
-        const equipo = document.getElementById('nombreEquipo').value;
-        const deporte = document.getElementById('deporteElegido').value;
-        const capitan = document.getElementById('capitanEquipo').value;
-
-        alert(`¡Inscripción iniciada!\n\nEquipo: ${equipo}\nDeporte: ${deporte}\nCapitán: ${capitan}\n\nSerás redirigido al paso de pago.`);
-    }
-</script>
-
-</body>
-  </html>
