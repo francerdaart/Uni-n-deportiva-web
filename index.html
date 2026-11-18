@@ -40,14 +40,121 @@
             color: #0f1e36;
             font-size: 2rem;
             letter-spacing: 1px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-transform: uppercase;
+        }
+
+        /* SECCIÓN DE PRESENTACIÓN / DIAPOSITIVAS */
+        .presentation-section {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .presentation-section h2 {
+            font-size: 1.3rem;
+            color: #0f1e36;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .slides-container {
+            position: relative;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 40px;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide h3 {
+            font-size: 1.15rem;
+            color: #0f1e36;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .slide p {
+            font-size: 0.95rem;
+            color: #334155;
+            line-height: 1.5;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #0f1e36;
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .slide-btn:hover {
+            background-color: #d4af37;
+        }
+
+        .prev-btn {
+            left: 0;
+        }
+
+        .next-btn {
+            right: 0;
+        }
+
+        .slide-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 15px;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #cbd5e1;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background-color: #0f1e36;
         }
 
         /* Cards Grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin-bottom: 40px;
         }
@@ -70,7 +177,7 @@
 
         .card-img {
             width: 100%;
-            height: 120px;
+            height: 140px;
             object-fit: cover;
             border-radius: 6px;
             margin-bottom: 15px;
@@ -264,6 +371,69 @@
 
     <h1>Inscripción Abierta a Torneos</h1>
 
+    <!-- Presentación Interactiva (Diapositivas) -->
+    <div class="presentation-section">
+        <h2>Presentación del Proyecto</h2>
+        <div class="slides-container">
+            <button class="slide-btn prev-btn" onclick="cambiarSlide(-1)">&#10094;</button>
+            
+            <!-- Diapositiva 1 -->
+            <div class="slide active">
+                <h3>1. Producto, Logo & Eslogan</h3>
+                <p><strong>Unión Deportiva</strong><br><em>"Espíritu de equipo, pasión de juego"</em></p>
+            </div>
+            <!-- Diapositiva 2 -->
+            <div class="slide">
+                <h3>2. Precios de Torneos</h3>
+                <p>• Torneo de Fútbol: 80.000 ARS por equipo<br>• Torneo de Handball: 40.000 ARS por equipo<br>• Torneo de Voley: 40.000 ARS por equipo</p>
+            </div>
+            <!-- Diapositiva 3 -->
+            <div class="slide">
+                <h3>3. Características Principales</h3>
+                <p>Plataforma integral de gestión de torneos multideporte (Fútbol, Handball y Vóley), facilitando la inscripción online y el seguimiento de encuentros.</p>
+            </div>
+            <!-- Diapositiva 4 -->
+            <div class="slide">
+                <h3>4. Organización y Logística</h3>
+                <p>Coordinación de horarios, distribución de canchas y sedes oficiales para garantizar el correcto desarrollo de cada competencia durante el fin de semana.</p>
+            </div>
+            <!-- Diapositiva 5 -->
+            <div class="slide">
+                <h3>5. Consumidor</h3>
+                <p>Nuestro producto se diferencia en el hecho de que ofrecemos varios deportes en lugar de uno solo y ofrecemos variedad para nuestros clientes.</p>
+            </div>
+            <!-- Diapositiva 6 -->
+            <div class="slide">
+                <h3>6. Comunicación</h3>
+                <p>Nuestra empresa se comunicará con los clientes principalmente por WhatsApp e Instagram, donde podrán realizar consultas, hacer pedidos y conocer las promociones. También brindaremos atención después de la compra para resolver dudas o reclamos. Además, tendremos en cuenta sus opiniones y sugerencias para mejorar nuestro producto y ofrecer una mejor atención.</p>
+            </div>
+            <!-- Diapositiva 7 -->
+            <div class="slide">
+                <h3>7. Conveniencia</h3>
+                <p>En la página web ofrecemos métodos de pago sencillos y también pueden confirmar la cancha y luego pagar en efectivo antes o después de jugar.</p>
+            </div>
+            <!-- Diapositiva 8 -->
+            <div class="slide">
+                <h3>8. Costo</h3>
+                <p>El cliente deberá pagar únicamente el alquiler de la cancha de la actividad que quiera realizar, ya sea fútbol, vóley o handball. Los precios estarán disponibles en nuestras redes sociales, en la recepción del establecimiento y en la página web. No se cobrarán costos adicionales, por lo que buscamos ofrecer un servicio accesible y claro para todos los clientes.</p>
+            </div>
+
+            <button class="slide-btn next-btn" onclick="cambiarSlide(1)">&#10095;</button>
+        </div>
+        
+        <!-- Indicadores de puntos -->
+        <div class="slide-indicators">
+            <span class="indicator active" onclick="irASlide(0)"></span>
+            <span class="indicator" onclick="irASlide(1)"></span>
+            <span class="indicator" onclick="irASlide(2)"></span>
+            <span class="indicator" onclick="irASlide(3)"></span>
+            <span class="indicator" onclick="irASlide(4)"></span>
+            <span class="indicator" onclick="irASlide(5)"></span>
+            <span class="indicator" onclick="irASlide(6)"></span>
+            <span class="indicator" onclick="irASlide(7)"></span>
+        </div>
+    </div>
+
     <!-- Tarjetas de deportes -->
     <div class="cards-grid">
         <!-- Fútbol -->
@@ -273,15 +443,6 @@
             <div class="price">80.000 ARS</div>
             <div class="price-sub">por equipo</div>
             <button class="btn-select" onclick="seleccionarDeporte('Torneo de Fútbol')">Inscribir equipo</button>
-        </div>
-
-        <!-- Básquet -->
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400" alt="Básquet" class="card-img">
-            <h3>Torneo de Básquet</h3>
-            <div class="price">50.000 ARS</div>
-            <div class="price-sub">por equipo</div>
-            <button class="btn-select" onclick="seleccionarDeporte('Torneo de Básquet')">Inscribir equipo</button>
         </div>
 
         <!-- Handball -->
@@ -324,12 +485,6 @@
                         <td>Cancha Principal</td>
                     </tr>
                     <tr>
-                        <td><strong>Básquet</strong></td>
-                        <td>Sábado - 18:30 hs</td>
-                        <td>Triple Impacto <span class="vs-badge">VS</span> Basquet Club</td>
-                        <td>Gimnasio Cubierto</td>
-                    </tr>
-                    <tr>
                         <td><strong>Handball</strong></td>
                         <td>Domingo - 10:00 hs</td>
                         <td>Gladiadores <span class="vs-badge">VS</span> Titanes HF</td>
@@ -360,7 +515,6 @@
                 <select id="deporteElegido" required>
                     <option value="" disabled selected>Selecciona un torneo</option>
                     <option value="Torneo de Fútbol">Torneo de Fútbol ($80.000)</option>
-                    <option value="Torneo de Básquet">Torneo de Básquet ($50.000)</option>
                     <option value="Torneo de Handball">Torneo de Handball ($40.000)</option>
                     <option value="Torneo de Voley">Torneo de Voley ($40.000)</option>
                 </select>
@@ -392,6 +546,33 @@
 </div>
 
 <script>
+    // Lógica para las diapositivas
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+
+    function mostrarSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(ind => ind.classList.remove('active'));
+
+        if (index >= slides.length) currentSlide = 0;
+        if (index < 0) currentSlide = slides.length - 1;
+
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+    }
+
+    function cambiarSlide(direccion) {
+        currentSlide += direccion;
+        mostrarSlide(currentSlide);
+    }
+
+    function irASlide(index) {
+        currentSlide = index;
+        mostrarSlide(currentSlide);
+    }
+
+    // Funciones del sitio
     function seleccionarDeporte(deporte) {
         document.getElementById('deporteElegido').value = deporte;
         document.getElementById('inscripcionForm').scrollIntoView({ behavior: 'smooth' });
