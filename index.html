@@ -44,7 +44,7 @@
             text-transform: uppercase;
         }
 
-        /* SECCIÓN DE PRESENTACIÓN REDISEÑADA (MÁS GRANDE Y LEGIBLE) */
+        /* SECCIÓN DE PRESENTACIÓN REDISEÑADA */
         .presentation-section {
             background: linear-gradient(135deg, #0f1e36 0%, #1d3557 100%);
             color: #ffffff;
@@ -131,7 +131,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Controles inferiores grandes y cómodos */
         .pres-controls {
             display: flex;
             justify-content: space-between;
@@ -402,7 +401,7 @@
 
     <h1>Inscripción Abierta a Torneos</h1>
 
-    <!-- Presentación Interactiva Mejorada (Grande y con tus textos exactos) -->
+    <!-- Presentación Interactiva -->
     <div class="presentation-section">
         <div class="pres-header">
             <h2>Presentación del Proyecto</h2>
@@ -427,32 +426,31 @@
                 </ul>
             </div>
 
-            <!-- Punto 3 (Consumidor) -->
+            <!-- Punto 3 -->
             <div class="slide">
                 <h3>3) Consumidor</h3>
                 <p>Nuestro producto se diferencia en el hecho de que ofrecemos varios deportes en lugar de uno solo y ofrecemos variedad para nuestros clientes.</p>
             </div>
 
-            <!-- Punto 4 (Comunicación) -->
+            <!-- Punto 4 -->
             <div class="slide">
                 <h3>4) Comunicación</h3>
                 <p>Nuestra empresa se comunicará con los clientes principalmente por WhatsApp e Instagram, donde podrán realizar consultas, hacer pedidos y conocer las promociones. También brindaremos atención después de la compra para resolver dudas o reclamos. Además, tendremos en cuenta sus opiniones y sugerencias para mejorar nuestro producto y ofrecer una mejor atención.</p>
             </div>
 
-            <!-- Punto 5 (Conveniencia) -->
+            <!-- Punto 5 -->
             <div class="slide">
                 <h3>5) Conveniencia</h3>
                 <p>En la página web ofrecemos métodos de pago sencillos y también pueden confirmar la cancha y luego pagar en efectivo antes o después de jugar.</p>
             </div>
 
-            <!-- Punto 6 (Costo) -->
+            <!-- Punto 6 -->
             <div class="slide">
                 <h3>6) Costo</h3>
                 <p>El cliente deberá pagar únicamente el alquiler de la cancha de la actividad que quiera realizar, ya sea fútbol, vóley o handball. Los precios estarán disponibles en nuestras redes sociales, en la recepción del establecimiento y en la página web. No se cobrarán costos adicionales, por lo que buscamos ofrecer un servicio accesible y claro para todos los clientes.</p>
             </div>
         </div>
 
-        <!-- Botones abajo e indicadores -->
         <div class="pres-controls">
             <button class="nav-btn" onclick="cambiarSlide(-1)">&#9664; Anterior</button>
             
@@ -482,7 +480,7 @@
 
         <!-- Handball -->
         <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Handball_St_P%C3%B6lten_vs_UHK_Krems_2018-09-07_160.jpg/640px-Handball_St_P%C3%B6lten_vs_UHK_Krems_2018-09-07_160.jpg" alt="Handball" class="card-img">
+            <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=400" alt="Handball" class="card-img">
             <h3>Torneo de Handball</h3>
             <div class="price">40.000 ARS</div>
             <div class="price-sub">por equipo</div>
@@ -581,7 +579,6 @@
 </div>
 
 <script>
-    // Lógica para las diapositivas
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
@@ -609,7 +606,6 @@
         mostrarSlide(currentSlide);
     }
 
-    // Funciones del sitio
     function seleccionarDeporte(deporte) {
         document.getElementById('deporteElegido').value = deporte;
         document.getElementById('inscripcionForm').scrollIntoView({ behavior: 'smooth' });
