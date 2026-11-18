@@ -18,14 +18,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
         }
 
         .container {
             max-width: 1000px;
             width: 100%;
             background: #ffffff;
-            padding: 30px;
+            padding: 25px;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             text-align: center;
@@ -33,47 +33,63 @@
 
         /* Logo & Header */
         .logo-container {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         h1 {
             color: #0f1e36;
-            font-size: 2rem;
+            font-size: 1.9rem;
             letter-spacing: 1px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-transform: uppercase;
         }
 
-        /* SECCIÓN DE PRESENTACIÓN / DIAPOSITIVAS */
+        /* SECCIÓN DE PRESENTACIÓN REDISEÑADA (MÁS GRANDE Y LEGIBLE) */
         .presentation-section {
-            background: #f1f5f9;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 25px;
+            background: linear-gradient(135deg, #0f1e36 0%, #1d3557 100%);
+            color: #ffffff;
+            border-radius: 14px;
+            padding: 30px 25px;
             margin-bottom: 40px;
-            text-align: center;
+            box-shadow: 0 10px 25px rgba(15, 30, 54, 0.2);
+            text-align: left;
         }
 
-        .presentation-section h2 {
-            font-size: 1.3rem;
-            color: #0f1e36;
-            margin-bottom: 15px;
+        .pres-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .pres-header h2 {
+            font-size: 1.1rem;
+            color: #d4af37;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
         }
 
-        .slides-container {
-            position: relative;
-            min-height: 140px;
+        .slide-counter {
+            background: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .slides-wrapper {
+            min-height: 210px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            padding: 10px 40px;
         }
 
         .slide {
             display: none;
-            animation: fadeIn 0.4s ease-in-out;
+            animation: fadeIn 0.35s ease-in-out;
         }
 
         .slide.active {
@@ -81,74 +97,89 @@
         }
 
         .slide h3 {
-            font-size: 1.15rem;
-            color: #0f1e36;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+            font-size: 1.55rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            border-left: 4px solid #d4af37;
+            padding-left: 12px;
         }
 
         .slide p {
-            font-size: 0.95rem;
-            color: #334155;
-            line-height: 1.5;
-            max-width: 700px;
-            margin: 0 auto;
+            font-size: 1.15rem;
+            color: #e2e8f0;
+            line-height: 1.65;
+        }
+
+        .slide ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .slide ul li {
+            font-size: 1.15rem;
+            color: #e2e8f0;
+            padding: 6px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+        }
+
+        .slide ul li:last-child {
+            border-bottom: none;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .slide-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: #0f1e36;
-            color: white;
+        /* Controles inferiores grandes y cómodos */
+        .pres-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            gap: 10px;
+        }
+
+        .nav-btn {
+            background-color: #d4af37;
+            color: #0f1e36;
             border: none;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
+            padding: 12px 20px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
+            font-size: 1rem;
+            transition: transform 0.15s, background 0.2s;
+            flex: 1;
+            max-width: 150px;
         }
 
-        .slide-btn:hover {
-            background-color: #d4af37;
-        }
-
-        .prev-btn {
-            left: 0;
-        }
-
-        .next-btn {
-            right: 0;
+        .nav-btn:hover {
+            background-color: #e5c158;
+            transform: scale(1.02);
         }
 
         .slide-indicators {
             display: flex;
             justify-content: center;
-            gap: 6px;
-            margin-top: 15px;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         .indicator {
-            width: 10px;
-            height: 10px;
+            width: 11px;
+            height: 11px;
             border-radius: 50%;
-            background-color: #cbd5e1;
-            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.3);
             cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
         }
 
         .indicator.active {
-            background-color: #0f1e36;
+            background-color: #d4af37;
+            transform: scale(1.25);
         }
 
         /* Cards Grid */
@@ -371,66 +402,70 @@
 
     <h1>Inscripción Abierta a Torneos</h1>
 
-    <!-- Presentación Interactiva (Diapositivas) -->
+    <!-- Presentación Interactiva Mejorada (Grande y con tus textos exactos) -->
     <div class="presentation-section">
-        <h2>Presentación del Proyecto</h2>
-        <div class="slides-container">
-            <button class="slide-btn prev-btn" onclick="cambiarSlide(-1)">&#10094;</button>
-            
-            <!-- Diapositiva 1 -->
+        <div class="pres-header">
+            <h2>Presentación del Proyecto</h2>
+            <span class="slide-counter" id="slideCounter">1 / 6</span>
+        </div>
+
+        <div class="slides-wrapper">
+            <!-- Punto 1 -->
             <div class="slide active">
-                <h3>1. Producto, Logo & Eslogan</h3>
-                <p><strong>Unión Deportiva</strong><br><em>"Espíritu de equipo, pasión de juego"</em></p>
-            </div>
-            <!-- Diapositiva 2 -->
-            <div class="slide">
-                <h3>2. Precios de Torneos</h3>
-                <p>• Torneo de Fútbol: 80.000 ARS por equipo<br>• Torneo de Handball: 40.000 ARS por equipo<br>• Torneo de Voley: 40.000 ARS por equipo</p>
-            </div>
-            <!-- Diapositiva 3 -->
-            <div class="slide">
-                <h3>3. Características Principales</h3>
-                <p>Plataforma integral de gestión de torneos multideporte (Fútbol, Handball y Vóley), facilitando la inscripción online y el seguimiento de encuentros.</p>
-            </div>
-            <!-- Diapositiva 4 -->
-            <div class="slide">
-                <h3>4. Organización y Logística</h3>
-                <p>Coordinación de horarios, distribución de canchas y sedes oficiales para garantizar el correcto desarrollo de cada competencia durante el fin de semana.</p>
-            </div>
-            <!-- Diapositiva 5 -->
-            <div class="slide">
-                <h3>5. Consumidor</h3>
-                <p>Nuestro producto se diferencia en el hecho de que ofrecemos varios deportes en lugar de uno solo y ofrecemos variedad para nuestros clientes.</p>
-            </div>
-            <!-- Diapositiva 6 -->
-            <div class="slide">
-                <h3>6. Comunicación</h3>
-                <p>Nuestra empresa se comunicará con los clientes principalmente por WhatsApp e Instagram, donde podrán realizar consultas, hacer pedidos y conocer las promociones. También brindaremos atención después de la compra para resolver dudas o reclamos. Además, tendremos en cuenta sus opiniones y sugerencias para mejorar nuestro producto y ofrecer una mejor atención.</p>
-            </div>
-            <!-- Diapositiva 7 -->
-            <div class="slide">
-                <h3>7. Conveniencia</h3>
-                <p>En la página web ofrecemos métodos de pago sencillos y también pueden confirmar la cancha y luego pagar en efectivo antes o después de jugar.</p>
-            </div>
-            <!-- Diapositiva 8 -->
-            <div class="slide">
-                <h3>8. Costo</h3>
-                <p>El cliente deberá pagar únicamente el alquiler de la cancha de la actividad que quiera realizar, ya sea fútbol, vóley o handball. Los precios estarán disponibles en nuestras redes sociales, en la recepción del establecimiento y en la página web. No se cobrarán costos adicionales, por lo que buscamos ofrecer un servicio accesible y claro para todos los clientes.</p>
+                <h3>1) Producto</h3>
+                <p><strong>UNIÓN DEPORTIVA</strong></p>
+                <p style="margin-top: 8px; font-size: 1.25rem; color: #d4af37;"><strong>Eslogan:</strong> Espíritu de equipo, pasión de juego</p>
             </div>
 
-            <button class="slide-btn next-btn" onclick="cambiarSlide(1)">&#10095;</button>
+            <!-- Punto 2 -->
+            <div class="slide">
+                <h3>2) Precio</h3>
+                <ul>
+                    <li><strong>Torneo de fútbol:</strong> 80.000 por equipo</li>
+                    <li><strong>Torneo de handball:</strong> 40.000 por equipo</li>
+                    <li><strong>Torneo de vóley:</strong> 40.000 por equipo</li>
+                </ul>
+            </div>
+
+            <!-- Punto 3 (Consumidor) -->
+            <div class="slide">
+                <h3>3) Consumidor</h3>
+                <p>Nuestro producto se diferencia en el hecho de que ofrecemos varios deportes en lugar de uno solo y ofrecemos variedad para nuestros clientes.</p>
+            </div>
+
+            <!-- Punto 4 (Comunicación) -->
+            <div class="slide">
+                <h3>4) Comunicación</h3>
+                <p>Nuestra empresa se comunicará con los clientes principalmente por WhatsApp e Instagram, donde podrán realizar consultas, hacer pedidos y conocer las promociones. También brindaremos atención después de la compra para resolver dudas o reclamos. Además, tendremos en cuenta sus opiniones y sugerencias para mejorar nuestro producto y ofrecer una mejor atención.</p>
+            </div>
+
+            <!-- Punto 5 (Conveniencia) -->
+            <div class="slide">
+                <h3>5) Conveniencia</h3>
+                <p>En la página web ofrecemos métodos de pago sencillos y también pueden confirmar la cancha y luego pagar en efectivo antes o después de jugar.</p>
+            </div>
+
+            <!-- Punto 6 (Costo) -->
+            <div class="slide">
+                <h3>6) Costo</h3>
+                <p>El cliente deberá pagar únicamente el alquiler de la cancha de la actividad que quiera realizar, ya sea fútbol, vóley o handball. Los precios estarán disponibles en nuestras redes sociales, en la recepción del establecimiento y en la página web. No se cobrarán costos adicionales, por lo que buscamos ofrecer un servicio accesible y claro para todos los clientes.</p>
+            </div>
         </div>
-        
-        <!-- Indicadores de puntos -->
-        <div class="slide-indicators">
-            <span class="indicator active" onclick="irASlide(0)"></span>
-            <span class="indicator" onclick="irASlide(1)"></span>
-            <span class="indicator" onclick="irASlide(2)"></span>
-            <span class="indicator" onclick="irASlide(3)"></span>
-            <span class="indicator" onclick="irASlide(4)"></span>
-            <span class="indicator" onclick="irASlide(5)"></span>
-            <span class="indicator" onclick="irASlide(6)"></span>
-            <span class="indicator" onclick="irASlide(7)"></span>
+
+        <!-- Botones abajo e indicadores -->
+        <div class="pres-controls">
+            <button class="nav-btn" onclick="cambiarSlide(-1)">&#9664; Anterior</button>
+            
+            <div class="slide-indicators">
+                <span class="indicator active" onclick="irASlide(0)"></span>
+                <span class="indicator" onclick="irASlide(1)"></span>
+                <span class="indicator" onclick="irASlide(2)"></span>
+                <span class="indicator" onclick="irASlide(3)"></span>
+                <span class="indicator" onclick="irASlide(4)"></span>
+                <span class="indicator" onclick="irASlide(5)"></span>
+            </div>
+
+            <button class="nav-btn" onclick="cambiarSlide(1)">Siguiente &#9654;</button>
         </div>
     </div>
 
@@ -550,6 +585,7 @@
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
+    const counter = document.getElementById('slideCounter');
 
     function mostrarSlide(index) {
         slides.forEach(slide => slide.classList.remove('active'));
@@ -560,6 +596,7 @@
 
         slides[currentSlide].classList.add('active');
         indicators[currentSlide].classList.add('active');
+        counter.textContent = `${currentSlide + 1} / ${slides.length}`;
     }
 
     function cambiarSlide(direccion) {
