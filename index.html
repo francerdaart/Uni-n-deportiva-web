@@ -145,14 +145,14 @@
             background-color: #d4af37;
             color: #0f1e36;
             border: none;
-            padding: 12px 20px;
+            padding: 12px 16px;
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: transform 0.15s, background 0.2s;
             flex: 1;
-            max-width: 150px;
+            max-width: 140px;
         }
 
         .nav-btn:hover {
@@ -163,13 +163,13 @@
         .slide-indicators {
             display: flex;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .indicator {
-            width: 11px;
-            height: 11px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.3);
             cursor: pointer;
@@ -184,7 +184,7 @@
         /* Cards Grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 20px;
             margin-bottom: 40px;
         }
@@ -207,7 +207,7 @@
 
         .card-img {
             width: 100%;
-            height: 140px;
+            height: 130px;
             object-fit: cover;
             border-radius: 6px;
             margin-bottom: 15px;
@@ -421,6 +421,7 @@
                 <h3>2) Precio</h3>
                 <ul>
                     <li><strong>Torneo de fútbol:</strong> 80.000 por equipo</li>
+                    <li><strong>Torneo de básquet:</strong> 50.000 por equipo</li>
                     <li><strong>Torneo de handball:</strong> 40.000 por equipo</li>
                     <li><strong>Torneo de vóley:</strong> 40.000 por equipo</li>
                 </ul>
@@ -447,12 +448,12 @@
             <!-- Punto 6 -->
             <div class="slide">
                 <h3>6) Costo</h3>
-                <p>El cliente deberá pagar únicamente el alquiler de la cancha de la actividad que quiera realizar, ya sea fútbol, vóley o handball. Los precios estarán disponibles en nuestras redes sociales, en la recepción del establecimiento y en la página web. No se cobrarán costos adicionales, por lo que buscamos ofrecer un servicio accesible y claro para todos los clientes.</p>
+                <p>El cliente deberá pagar únicamente el alquiler de la cancha de la actividad que quiera realizar, ya sea fútbol, básquet, vóley o handball. Los precios estarán disponibles en nuestras redes sociales, en la recepción del establecimiento y en la página web. No se cobrarán costos adicionales, por lo que buscamos ofrecer un servicio accesible y claro para todos los clientes.</p>
             </div>
         </div>
 
         <div class="pres-controls">
-            <button class="nav-btn" onclick="cambiarSlide(-1)">&#9664; Anterior</button>
+            <button type="button" class="nav-btn" onclick="cambiarSlide(-1)">&#9664; Anterior</button>
             
             <div class="slide-indicators">
                 <span class="indicator active" onclick="irASlide(0)"></span>
@@ -463,7 +464,7 @@
                 <span class="indicator" onclick="irASlide(5)"></span>
             </div>
 
-            <button class="nav-btn" onclick="cambiarSlide(1)">Siguiente &#9654;</button>
+            <button type="button" class="nav-btn" onclick="cambiarSlide(1)">Siguiente &#9654;</button>
         </div>
     </div>
 
@@ -475,7 +476,16 @@
             <h3>Torneo de Fútbol</h3>
             <div class="price">80.000 ARS</div>
             <div class="price-sub">por equipo</div>
-            <button class="btn-select" onclick="seleccionarDeporte('Torneo de Fútbol')">Inscribir equipo</button>
+            <button type="button" class="btn-select" onclick="seleccionarDeporte('Torneo de Fútbol')">Inscribir equipo</button>
+        </div>
+
+        <!-- Básquet -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400" alt="Básquet" class="card-img">
+            <h3>Torneo de Básquet</h3>
+            <div class="price">50.000 ARS</div>
+            <div class="price-sub">por equipo</div>
+            <button type="button" class="btn-select" onclick="seleccionarDeporte('Torneo de Básquet')">Inscribir equipo</button>
         </div>
 
         <!-- Handball -->
@@ -484,7 +494,7 @@
             <h3>Torneo de Handball</h3>
             <div class="price">40.000 ARS</div>
             <div class="price-sub">por equipo</div>
-            <button class="btn-select" onclick="seleccionarDeporte('Torneo de Handball')">Inscribir equipo</button>
+            <button type="button" class="btn-select" onclick="seleccionarDeporte('Torneo de Handball')">Inscribir equipo</button>
         </div>
 
         <!-- Voley -->
@@ -493,7 +503,7 @@
             <h3>Torneo de Voley</h3>
             <div class="price">40.000 ARS</div>
             <div class="price-sub">por equipo</div>
-            <button class="btn-select" onclick="seleccionarDeporte('Torneo de Voley')">Inscribir equipo</button>
+            <button type="button" class="btn-select" onclick="seleccionarDeporte('Torneo de Voley')">Inscribir equipo</button>
         </div>
     </div>
 
@@ -516,6 +526,12 @@
                         <td>Sábado - 16:00 hs</td>
                         <td>Los Raiados <span class="vs-badge">VS</span> La Sub21</td>
                         <td>Cancha Principal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Básquet</strong></td>
+                        <td>Sábado - 18:30 hs</td>
+                        <td>Triple Impacto <span class="vs-badge">VS</span> Basquet Club</td>
+                        <td>Gimnasio Cubierto</td>
                     </tr>
                     <tr>
                         <td><strong>Handball</strong></td>
@@ -548,6 +564,7 @@
                 <select id="deporteElegido" required>
                     <option value="" disabled selected>Selecciona un torneo</option>
                     <option value="Torneo de Fútbol">Torneo de Fútbol ($80.000)</option>
+                    <option value="Torneo de Básquet">Torneo de Básquet ($50.000)</option>
                     <option value="Torneo de Handball">Torneo de Handball ($40.000)</option>
                     <option value="Torneo de Voley">Torneo de Voley ($40.000)</option>
                 </select>
@@ -614,7 +631,7 @@
     function procesarInscripcion(event) {
         event.preventDefault();
         const equipo = document.getElementById('nombreEquipo').value;
-        const deporte = document.getElementById('deporteElegido'].value;
+        const deporte = document.getElementById('deporteElegido').value;
         const capitan = document.getElementById('capitanEquipo').value;
 
         const numeroTelefono = "542944836826"; 
